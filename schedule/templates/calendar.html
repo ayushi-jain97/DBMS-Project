@@ -1,0 +1,83 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="">
+
+<title>Robotics Club</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="/static/CSS/calendar.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="top">
+        <div class="navbar-wrapper">
+        <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" style="font-style: italic">IIT Varanasi</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/home">Home</a></li>
+                <li class ="active" ><a href="/schedule">Calendar</a></li>
+                <li><a href="/merchandise">Merchandise</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technex <span class="caret"></span></a>
+                   <ul class="dropdown-menu">
+                    <li><a href="/events">Events</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Participants</li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </div>
+        </div>
+      
+        </div>
+        <div class="container" style="margin-top: 2%;">
+        <form method="post" action="/schedule/">
+            {% csrf_token %}
+            <select class="dropdown" name="sorting" title="sortby">
+                <option class="dropdown-item" selected disabled>Sort By</option>
+              <option class="dropdown-item" value="1"><a href="#">Latest to Oldest</a></option>
+              <option class="dropdown-item" value="2"><a href="#">Oldest to Latest</a></option>
+            </select>
+            <input type="submit" value="Select">
+            </form>
+        </div>
+        
+        <div class="container">
+        <hr class="featurette-divider">
+            {% for workshop in workshop_list %}
+            <div class="card">
+              <img class="image-card card-img-top" src="{{ workshop.8 }} " alt="Card image cap">
+              <div class="card-block">
+                <h4 class="title-card card-title">{{ workshop.3 }}</h4>
+                <p class="text-card card-text">{{ workshop.7 }} </p>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+<script src="/static/jquery/jquery.min.js"></script>    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

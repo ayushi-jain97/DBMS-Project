@@ -1,0 +1,42 @@
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+.top{
+    display: block;
+}
+.navbar-wrapper {
+    position: relative;
+    top: 15px;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
+    color: white;
+}
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
+form{
+    margin-top: 2%;
+}
+.form-group{
+    margin-top: 30px;
+}
+.error{
+    color: red;
+    margin-left: 18%;
+}

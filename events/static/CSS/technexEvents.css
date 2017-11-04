@@ -1,0 +1,57 @@
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+.top{
+    display: block;
+}
+.navbar-wrapper {
+    position: relative;
+    top: 15px;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
+    color: white;
+}
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
+.card{
+    position: relative;
+    border: 1px solid silver;
+    width: 33.33rem;
+    margin: 2%;
+    padding: 2px;
+    float:left;
+}
+.title{
+    text-align: center;
+}
+.text{
+    text-align: center;
+}
+.time{
+    background-color: rgb(197, 44, 102);
+    color: white;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 500;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}

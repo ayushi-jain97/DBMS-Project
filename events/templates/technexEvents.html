@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="">
+
+<title>Robotics Club</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="/static/CSS/technexEvents.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="top">
+        <div class="navbar-wrapper">
+        <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" style="font-style: italic">IIT Varanasi</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/home">Home</a></li>
+                <li ><a href="/schedule">Calendar</a></li>
+                <li><a href="/merchandise">Merchandise</a></li>
+                <li class="dropdown active">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technex <span class="caret"></span></a>
+                   <ul class="dropdown-menu">
+                    <li><a href="/events">Events</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Participants</li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </div>
+        </div>
+      
+        </div>
+        
+       
+       
+        <div class="container">
+        <hr class="featurette-divider">
+            {% for event in event_list %}
+            <div class="card">
+                <div class="time">{{ event.2 }}</div>
+              <div class="card-block">
+                <h4 class="title card-title">{{ event.8 }}</h4>
+                <p class="text"><img src="/static/images/money.png" style="width: 20px;">&nbsp;{{ event.4 }}</p>
+                  <p class="text"><img src="/static/images/venue.png" style="width: 25px;">&nbsp;{{ event.3 }}</p>
+                  <p class="text"><img src="/static/images/phone.ico" style="width: 18px;">&nbsp;{{ event.9.0}} - {{ event.9.1 }}</p>
+                  <p class="text"><img src="/static/images/phone.ico" style="width: 18px;">&nbsp;{{ event.10.0}} - {{ event.10.1 }}</p>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+<script src="/static/jquery/jquery.min.js"></script>    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

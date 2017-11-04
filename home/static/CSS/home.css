@@ -1,0 +1,111 @@
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+.top{
+    background-image: url('../images/wall3.jpg');
+    background-size: cover;
+    display: block;
+}
+.navbar-wrapper {
+    position: relative;
+    top: 15px;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
+    color: white;
+}
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
+.content{
+    position: relative;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-align: center;
+    font-family: inherit;
+    font-weight: 800;
+    line-height: 1.1;
+    color: aliceblue;
+    font-size: 36px;
+}
+
+.sidebar{
+    height: 160px;
+    width: 40px;
+    position: fixed;
+    top: 50%;
+    right: 1%;
+}
+.linkbar{
+    width:100%;
+    height:25%;
+
+    margin-top: 10px;
+}
+.featurette-divider {
+  margin-top: 50px; 
+    margin-bottom: 50px;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.modal-dialog{
+    font-weight: 300;
+    text-shadow: none;
+    color: black;
+}
+.modal-body{
+    color: dimgrey;
+    font-size: 20px;
+}
+.office{
+    background-color: silver;
+    width: 100%;
+}
+.foot{
+    margin-top: 50px;
+}
+.img-office{
+    width:60%;
+    height: 200px;
+    text-align: center;
+}
+.div-office{
+    color: black;
+    padding: 20px 15px 15px 5px; 
+    text-align: center;
+}
+.p-office{
+    text-align: center;
+    margin-top: 5px;
+    color: black;
+    margin-bottom: 0;
+}
+.nav-button{
+    margin-top: 6px;
+}
+.ack{
+    background-color: #3F51B5;
+    color: lightgoldenrodyellow;
+}
+.ack-text{
+    margin: 3%;   
+}

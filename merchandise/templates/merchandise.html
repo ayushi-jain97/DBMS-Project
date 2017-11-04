@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="">
+
+<title>Robotics Club</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="/static/CSS/merchandise.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="top">
+        <div class="navbar-wrapper">
+        <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" style="font-style: italic">IIT Varanasi</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/home">Home</a></li>
+                <li ><a href="/schedule">Calendar</a></li>
+                <li class="active"><a href="/merchandise">Merchandise</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technex <span class="caret"></span></a>
+                   <ul class="dropdown-menu">
+                    <li><a href="/events">Events</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Participants</li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </div>
+        </div>
+      
+        </div>
+        
+        <div class="container" style="margin-top: 2%;">
+        <form method="post" action="/merchandise/">
+            {% csrf_token %}
+            <select class="dropdown" name="sorting" title="sortby">
+                <option class="dropdown-item" selected disabled>Sort By</option>
+              <option class="dropdown-item" value="1"><a href="#">Price: Lowest to Highest</a></option>
+              <option class="dropdown-item" value="2"><a href="#">Price: Highest to Lowest</a></option>
+            </select>
+            <input type="submit" value="Select">
+            </form>
+            
+        
+        <hr class="featurette-divider">
+        </div>
+        <p class="order">{{ message }}</p>
+        <button class="btn btn-success order" data-toggle="modal" data-target="#myModal">Place Order</button>
+        
+        <div id="myModal" class="modal fade" data-backdrop="{{ display }}" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Place Order</h4>
+                      </div>
+                  <div class="modal-body">
+                      
+                      
+                    <div class="pm-button"><a href="https://www.payumoney.com/paybypayumoney/#/40F4EFC1921CEE35F40451D5B927B094"><img src="https://www.payumoney.com//media/images/payby_payumoney/buttons/111.png" /></a></div>
+                      
+                      <!--<form action="" method="post" target="_top">
+                        {% csrf_token %}
+                          
+                          
+
+                        
+                <div class="pm-button">
+                  <a href="https://www.payumoney.com/paybypayumoney/#/EC45A52B4AA7525C39BEB321442FB9B0">
+                    <img src="https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png" />
+                  </a>
+                </div>
+
+                     
+
+
+                          
+                          <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Roll Number</label>
+                          <div class="col-sm-8">
+                            <select name="rollnumber" required>
+                            <option selected="selected" disabled>Roll Number:</option>
+                                {% for roll in roll_list %}
+                                <option value="{{ roll }}">{{ roll }}</option>
+                                {% endfor %}
+                            </select>
+                          </div>
+                        </div>
+                          <div class="form-group-row">
+                            <label class="col-sm-4 col-form-label">Size</label>
+                          <div class="col-sm-2 form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="size" id="inlineRadio1" value="S" required> S
+                          </label>
+                        </div>
+                        <div class="col-sm-2 form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="size" id="inlineRadio2" value="M"> M
+                          </label>
+                        </div>
+                        <div class="col-sm-2 form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="size" id="inlineRadio3" value="L"> L
+                          </label>
+                        </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Print Name</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" name="printName" placeholder="Print Name" required>
+                          </div>
+                        </div>
+                          
+                          <div class="form-group row">
+                          <label class="col-sm-4 col-form-label">Merchandise</label>
+                          <div class="col-sm-8">
+                            <select name="itemid" required>
+                            <option selected="selected" disabled>Select item:</option>
+                                {% for item in item_list %}
+                                <option value="{{ item }}">{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                          </div>
+                        </div>
+                          
+                         <div class="form-group row">
+                      <div class="offset-sm-2 col-sm-10">
+                        <button type="submit" class="btn btn-success" name="order" value="order">Submit</button>
+                      </div>
+                        </div>
+                          </form>-->
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+        
+        
+        <div class="container">
+            {% for merchandise in merchandise_list %}
+            <div class="card">
+              <img class="image-card card-img-top" src="{{ merchandise.4 }}" alt="Card image cap">
+                
+              <div class="card-block">
+                  <h4 class="title-card card-title">ItemID - {{ merchandise.0 }}</h4>
+                  <h4 class="title-card card-title"><img style="width: 20px;" src="/static/images/money.png"> {{ merchandise.2 }}</h4>
+                <h4 class="title-card card-title">{{ merchandise.1 }}</h4>
+                <p class="text-card card-text">{{ merchandise.3 }} </p>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+<script src="/static/jquery/jquery.min.js"></script>    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,168 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="">
+
+<title>Robotics Club</title>
+        <!-- Bootstrap core CSS -->
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="/static/CSS/technexRegister.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="top">
+        <div class="navbar-wrapper">
+        <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" style="font-style: italic">IIT Varanasi</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/home">Home</a></li>
+                <li ><a href="/schedule">Calendar</a></li>
+                <li><a href="/merchandise">Merchandise</a></li>
+                <li class="dropdown active">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technex <span class="caret"></span></a>
+                   <ul class="dropdown-menu">
+                    <li><a href="/events">Events</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Participants</li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </div>
+        </div>
+      
+        </div>
+        
+        <div class="container">
+          <form method="post" action="/register/">
+            {% csrf_token %}
+              <h4>{{ message }}</h4>
+            <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="fullname" id="inputEmail3" placeholder="Full Name" value="{{ name }}"required>
+              </div>
+                
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">College</label>
+              <div class="col-sm-10">
+                <input type="text" name="college" class="form-control"  placeholder="College" value="{{ college }}" required>
+              </div>
+            </div>  
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" value="{{ email }}" required>
+              </div>
+            </div>
+              <div class="form-group row">
+              <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
+              <div class="col-sm-10">
+                <input type="tel" name="phone" class="form-control" id="inputPhone" placeholder="Phone" value="{{ phone }}" required>
+                <p class="error">{{ phoneError }}</p>
+              </div>
+            </div>
+              <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Username</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="username" placeholder="Username" value="{{ username }}" required>
+                  <p class="error">{{ userError }}</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+            </div>
+            <fieldset class="form-group row">
+              <label class="col-form-legend col-sm-2">Gender</label>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="M" {{ g.0 }}>
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="F" {{ g.1 }}>
+                    Female
+                  </label>
+                </div>
+                  <p class="error">{{ eventError }}</p>
+              </div>
+                
+            </fieldset>
+           
+              
+              <fieldset class="form-group row">
+              <label class="col-form-legend col-sm-2">Events</label>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="event" value="Robowars" {{ event.0 }}>
+                    Robowars
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="event" value="Maze Explorer" {{ event.1 }}>
+                    Maze Explorer
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="event" value="Pixelate" {{ event.2 }}>
+                    Pixelate
+                  </label>
+                </div>
+                  <div class="form-check disabled">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="event" value="Modex" {{ event.3 }}>
+                    Modex
+                  </label>
+                </div>
+                  <div class="form-check disabled">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="event" value="Hurdle Mania" {{ event.4 }}>
+                    Hurdle Mania
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+              
+            <div class="form-group row">
+              <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+<script src="/static/jquery/jquery.min.js"></script>    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

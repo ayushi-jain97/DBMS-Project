@@ -1,0 +1,17 @@
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+.heading{
+    text-align: center;
+}
+.back{
+    margin-top: 10px;
+    margin-left: 5%;
+}

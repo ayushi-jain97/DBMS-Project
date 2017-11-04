@@ -1,0 +1,214 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Robotics Club</title>
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/CSS/home.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="top">
+        <div class="navbar-wrapper">
+        <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" style="font-style: italic">IIT Varanasi</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class ="active"><a href="/home">Home</a></li>
+                <li ><a href="/schedule">Calendar</a></li>
+                <li><a href="/merchandise">Merchandise</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technex <span class="caret"></span></a>
+                   <ul class="dropdown-menu">
+                    <li><a href="/events">Events</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Participants</li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                  </ul>
+                </li>
+              </ul>
+                <button class="nav-button btn btn-success" data-toggle="modal" data-target="#loginModal">Admin Login</button>
+                
+            </div>
+          </div>
+        </nav>
+        </div>
+        </div>
+            
+            <div class="content">
+                <p>Robotics Club</p>
+                <p style="font-size: 20px;">Robotics Club of IIT (BHU) Varanasi is one of the most active clubs in the entire college.</p>
+                <p style="font-size: 20px;">It has been a successful club since many years and is growing year by year. </p>
+                <p><button style="top: 3%;" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal">Learn more</button></p>
+                
+                <div id="loginModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Admin Login</h4>
+                      </div>
+                      <div class="modal-body">
+                          {{ error }}
+                          <form action="/home/" method="post">
+                            {% csrf_token %}
+                              <div class="form-group row">
+                              <label class="col-sm-2 col-form-label">Username</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" name="username" placeholder="Username" required>
+                              </div>
+                            </div>
+                              <div class="form-group row">
+                              <label class="col-sm-2 col-form-label">Password</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                              </div>
+                            </div>
+                             <div class="form-group row">
+                          <div class="offset-sm-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                          </div>
+                        </div>
+                          </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                
+                
+                    <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Contact Us</h4>
+                      </div>
+                      <div class="modal-body">
+                          <img src="/static/images/phone.ico" style="width: 25px;">
+                        <span>+91 72329 86380</span>
+                          <br><br>
+                          <img src="/static/images/email.png" style="width: 25px;">
+                        <span>roboticsclub@iitbhu.ac.in</span>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+            
+        </div>       
+        
+        
+        <div class="sidebar">
+            <a href="https://www.facebook.com/roboticsclubatiitbhu/"><img class="linkbar" src="/static/images/fb.png"></a>
+            <a href="http://www.sntciitbhu.org/clubs/robotics"><img class="linkbar" src="/static/images/home.png"></a>
+            <a href="https://www.quora.com/topic/Robotics-Club-at-IIT-BHU"><img class="linkbar" src="/static/images/quora.png"></a>
+            <a href="https://groups.google.com/forum/#!forum/roboticsclub_iitbhu"><img class="linkbar" src="/static/images/gmail.png"></a>
+        </div>
+        
+        
+          <div class="container">
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7  col-md-push-5">
+          <h2 class="featurette-heading"> <span class="text-muted">About Us</span></h2>
+          <p class="lead">Robotics Club organizes year-long activities for the students especially for the Freshers. The club promotes friendly learning of many of the difficult tasks and topics, and encourages the young minds to develop the robots that would be helpful to mankind in forthcoming future.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="/static/images/3.jpeg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading"><span class="text-muted">Our Vision</span></h2>
+          <p class="lead">
+
+The club believes in promoting technology and innovation in the college. It undertakes projects and mentor students in fields like manual robotics, autonomous robotics, embedded systems, etc. 
+</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="/static/images/2.jpeg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7  col-md-push-5">
+          <h2 class="featurette-heading"><span class="text-muted">And lastly, this one. </span></h2>
+          <p class="lead">The Robotics Club promote robotics in the college not only as a hobby but also as a career option. We try to make the students aware about what is happening in the world of Robotics around the globe. We hope to grow as a team and develop technologies that would take the club to different heights.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="/static/images/index.jpeg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+    </div>
+        <div class="office">
+            <div class="container">
+                <div class="col-md-4 div-office">
+                    <img src="/static/images/soujanya.jpeg" class="img-circle img-office">
+                    <p class="p-office font-weight-bold">Soujanya Madasu</p>
+                    <p class="p-office">Joint Secretary</p>
+                </div>
+                <div class="col-md-4 div-office">
+                    <img src="/static/images/himanshu.jpg" class="img-circle img-office">
+                    <p class="p-office font-weight-bold">Himanshu Mourya </p>
+                    <p class="p-office">Secretary</p>
+                </div>
+                <div class="col-md-4 div-office">
+                    <img src="/static/images/naman.jpg" class="img-circle img-office">
+                    <p class="p-office font-weight-bold">Naman Sharma</p>
+                    <p class="p-office">Joint Secretary</p>
+                </div>
+          </div>      
+        </div>
+        <div class="container" style="width:100%;">
+              <div class="row">
+                   <h2 class="text-center" style="width: 300px;margin-left:40%; border: 1px solid gray;">Acknowledgements</h2>
+        </div>
+              <div class="row ack">
+                <div class="col-md-3"><img style="height: 300px;" src="/static/images/iitbhu.png"></div>
+                <div class="col-md-9">
+                    <h4 class="ack-text">This project is implemented as a part of DBMS Course offered to CSE(Part 3) students at IIT BHU, Varanasi.</h4>
+                    <h4 class="ack-text">The Robotics Club, IIT BHU heartily thanks <strong>Ayushi Jain</strong> for brining this idea to life. It would not have been possible without constant motivation from <strong>Dr. Ravindranath Chowdary</strong>.</h4>
+                    <h4 class="ack-text">Project Duration: August '17 - November '17</h4>
+                  </div>
+              </div>
+        </div>
+          <div class="container">
+              <hr class="featurette-divider">
+      <footer class="foot">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Robotics Club, IIT BHU</p>
+      </footer>
+        </div>
+         <script src="/static/jquery/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
